@@ -1,4 +1,4 @@
-# Multi-Agent QA Framework
+# Tree of Agents (TOA)
 
 This project provides a modular framework for building and evaluating multi-agent reasoning systems on long documents such as novels or stories. It is designed to work with large language models (LLMs) through APIs (OpenAI-compatible, local deployment, etc.), allowing agents to collaborate and debate over document comprehension tasks.
 
