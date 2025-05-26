@@ -14,7 +14,7 @@ This project provides a modular framework for building and evaluating multi-agen
 ## Directory Structure
 
 ```
-├── main.py               # Entry point for running experiments
+├── run.py                # Entry point for running experiments
 ├── agent.py              # Defines agent classes for different backends
 ├── data_utils.py         # Dataset loading and context preparation
 ├── utils.py              # Prompt templates, parsing, voting, etc.
@@ -52,6 +52,8 @@ load_dotenv()
 ### 3. Prepare datasets
 
 Place datasets like `DetectiveQA` or `NovelQA` under the `datasets/` directory. These should be in `.pkl` format with the expected structure.
+
+You can find datasets in [Phospheneser/DetectiveQA](https://huggingface.co/datasets/Phospheneser/DetectiveQA) and [NovelQA/NovelQA](https://huggingface.co/datasets/NovelQA/NovelQA).
 
 ### 4. Run an experiment
 
