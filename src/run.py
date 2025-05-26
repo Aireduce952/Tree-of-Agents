@@ -25,9 +25,9 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Run multi-agent model reasoning.")
     parser.add_argument('--model', type=str, default='llama', help="Agent model name (e.g., llama, deepseek)")
     parser.add_argument('--dataset', type=str, default='DetectiveQA', help="Dataset to use")
-    parser.add_argument('--sample_num', type=int, default=100, help="Number of samples to process")
+    parser.add_argument('--sample_num', type=int, default=1, help="Number of samples to process")
     parser.add_argument('--agent_num', type=int, default=5, help="Number of agents")
-    parser.add_argument('--repetition_num', type=int, default=1, help="Repeat the full experiment N times")
+    parser.add_argument('--repetition_num', type=int, default=2, help="Repeat the full experiment N times")
     parser.add_argument('--api_key', type=str, default=os.getenv("API_KEY"), help="API key for model access")
     parser.add_argument('--base_url', type=str, default=os.getenv("BASE_URL"), help="Base URL for API endpoint")
     return parser.parse_args()
@@ -68,6 +68,8 @@ def initial_topic_confirm(item, agent_list, doc_list):
                 result = parse_json(response)
                 agent.fact = result['evidence']
                 agent.conclusion = result['answer']
+                logging.warning(f"Agent {agent.id}, evidence: {result['evidence']}")
+                logging.warning(f"Agent {agent.id}, answer: {result['answer']}")
                 break
             except Exception as e:
                 logging.warning(f"Agent {agent.id} response error, retry {retry}/6: {e}")

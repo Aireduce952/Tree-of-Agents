@@ -41,7 +41,20 @@ class BaseAgent:
 
     def reset(self):
         """Reset agent state between runs."""
-        self.__init__(self.id, self.api_key, self.name, self.model, self.base_url)
+        self.explanation = ""
+        self.claim = ""
+        self.docs = ""
+        self.fact = ""
+        self.conclusion = ""
+        self.inspired = ""
+        self.message = []
+        self.helpful = {}
+        self.opinions = {}
+        self.sequence = []
+        self.useless_sequence = []
+        self.final_decision = ""
+        self.last = ""
+        self.options = ""
 
     @backoff.on_exception(
         backoff.expo,
