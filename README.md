@@ -6,7 +6,7 @@ This project provides a modular framework for building and evaluating multi-agen
 
 - Modular and extensible agent design (`agent.py`)
 - Dataset loader with preprocessing utilities (`data_utils.py`)
-- Multi-round collaborative reasoning pipeline (`main.py`)
+- Multi-round collaborative reasoning pipeline (`run.py`)
 - Unified and structured prompting logic (`utils.py`)
 - Supports OpenAI API and local LLM deployments
 - Automatic retry and logging for robustness
@@ -58,7 +58,7 @@ You can find datasets in [Phospheneser/DetectiveQA](https://huggingface.co/datas
 ### 4. Run an experiment
 
 ```bash
-python main.py \
+python run.py \
   --model llama \
   --dataset DetectiveQA \
   --sample_num 100 \
